@@ -1,0 +1,8 @@
+[Unit]
+Description=Switch desktop theme to dark
+
+[Service]
+Type=oneshot
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/kurumi/.Xauthority
+ExecStart=/home/kurumi/.local/bin/theme-switch dark

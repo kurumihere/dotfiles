@@ -1,0 +1,11 @@
+[Unit]
+Description=Check desktop theme by sunrise and sunset
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=10min
+Persistent=true
+Unit=theme-auto.service
+
+[Install]
+WantedBy=timers.target

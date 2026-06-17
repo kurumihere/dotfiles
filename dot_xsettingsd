@@ -1,0 +1,24 @@
+Net/ThemeName "Adwaita"
+Net/IconThemeName "Adwaita"
+Net/EnableEventSounds 0
+Net/EnableInputFeedbackSounds 0
+
+Gtk/ThemeName "Adwaita"
+Gtk/IconThemeName "Adwaita"
+Gtk/CursorThemeName "Adwaita"
+Gtk/CursorThemeSize 24
+Gtk/FontName "Noto Sans 10"
+Gtk/MonospaceFontName "JetBrainsMono Nerd Font 10"
+Gtk/ApplicationPreferDarkTheme 0
+Gtk/EnableAnimations 1
+Gtk/ToolbarStyle "icons"
+Gtk/MenuImages 1
+Gtk/ButtonImages 0
+Gtk/PrimaryButtonWarpsSlider 0
+
+Xft/DPI 98304
+Xft/Antialias 1
+Xft/Hinting 1
+Xft/HintStyle "hintslight"
+Xft/RGBA "rgb"
+Xft/lcdfilter "lcddefault"
