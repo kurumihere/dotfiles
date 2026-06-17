@@ -78,12 +78,18 @@ local function apply_system_theme()
 	end
 
 	current_theme = next_theme
-
-	require("gruvbox").setup({
-		contrast = is_dark and "medium" or "hard",
+	vim.o.background = next_theme
+	require("ppurpp").setup({
 		transparent_mode = true,
+		italic = {
+			strings = true,
+			emphasis = true,
+			comments = true,
+			folds = true,
+			operators = false,
+		},
 	})
-	vim.cmd.colorscheme("gruvbox")
+	vim.cmd.colorscheme("ppurpp")
 	set_transparent()
 end
 
@@ -560,7 +566,7 @@ vim.api.nvim_create_autocmd("VimLeave", {
 -- ============================================================================
 vim.pack.add({
 	"https://www.github.com/echasnovski/mini.nvim",
-	"https://github.com/ellisonleao/gruvbox.nvim",
+	"https://github.com/kurumihere/ppurpp",
 	"https://www.github.com/ibhagwan/fzf-lua",
 	{
 		src = "https://github.com/nvim-treesitter/nvim-treesitter",
