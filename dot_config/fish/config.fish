@@ -1,7 +1,7 @@
 set fish_greeting
 set -e NO_COLOR
 
-set -gx VISUAL neovim
+set -gx VISUAL nvim
 set -gx EDITOR $VISUAL
 set -gx PAGER  $VISUAL
 
