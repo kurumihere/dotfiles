@@ -33,6 +33,10 @@
       "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
+    "ppurpp": {
+      "rev": "2b9cf3399dcbe0804c738fa68cc303ec37db2140",
+      "src": "https://github.com/kurumihere/ppurpp"
+    },
     "rustaceanvim": {
       "rev": "d2f5271924117588c82bec9086c9807960aafe1e",
       "src": "https://github.com/mrcjkb/rustaceanvim"
