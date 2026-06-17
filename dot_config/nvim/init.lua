@@ -311,8 +311,17 @@ vim.cmd([[
 
 -- Function to change statusline based on window focus
 local function setup_dynamic_statusline()
-	vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
-		callback = function()
+	local function is_floating_window()
+		return vim.api.nvim_win_get_config(0).relative ~= ""
+	end
+
+	local function set_statusline(active)
+		if is_floating_window() then
+			vim.opt_local.statusline = ""
+			return
+		end
+
+		if active then
 			vim.opt_local.statusline = table.concat({
 				"  ",
 				"%#StatusLineBold#",
@@ -325,13 +334,21 @@ local function setup_dynamic_statusline()
 				"%=", -- Right-align everything after this
 				" %l:%c  %P ",
 			})
+		else
+			vim.opt_local.statusline = "  %f %h%m%r \u{e0b1} %{v:lua.file_type()} %=  %l:%c   %P "
+		end
+	end
+
+	vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
+		callback = function()
+			set_statusline(true)
 		end,
 	})
 	vim.api.nvim_set_hl(0, "StatusLineBold", { bold = true })
 
 	vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
 		callback = function()
-			vim.opt_local.statusline = "  %f %h%m%r \u{e0b1} %{v:lua.file_type()} %=  %l:%c   %P "
+			set_statusline(false)
 		end,
 	})
 end
