@@ -4,6 +4,11 @@ set -e NO_COLOR
 set -gx VISUAL nvim
 set -gx EDITOR $VISUAL
 set -gx PAGER  $VISUAL
+fish_vi_key_bindings
+set -g fish_cursor_default block
+set -g fish_cursor_insert block
+set -g fish_cursor_replace_one block
+set -g fish_cursor_visual block
 
 set -gx PROJECTS "$HOME/Projects"
 

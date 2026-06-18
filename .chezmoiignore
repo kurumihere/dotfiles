@@ -2,3 +2,4 @@
 .gitignore
 README.md
 LICENSE
+dot_config/nvim/nvim-pack-lock.json

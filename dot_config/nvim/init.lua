@@ -1,0 +1,6 @@
+require('config.packages')
+require('config.options')
+require('config.keymaps')
+require('config.lsp')
+require('config.plugins')
+require('config.theme')
