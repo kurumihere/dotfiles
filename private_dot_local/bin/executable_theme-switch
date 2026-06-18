@@ -329,7 +329,7 @@ write_dunst() {
     frame_color = "$accent_alt"
     gap_size = 4
     corner_radius = 0
-    transparency = 20
+    transparency = 0
 
     icon_theme = Adwaita
     enable_recursive_icon_lookup = true
