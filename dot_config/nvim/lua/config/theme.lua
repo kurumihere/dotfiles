@@ -21,7 +21,6 @@ local function is_dark_mode()
 end
 
 vim.g.airline_theme = 'ppurpp'
-vim.opt.rtp:prepend(os.getenv('HOME') .. '/Projects/ppurpp')
 vim.o.background = is_dark_mode() and 'dark' or 'light'
 require('ppurpp').setup({
   italic = { comments = true, strings = true, emphasis = true, folds = true, operators = true },

@@ -23,10 +23,10 @@
     separator_height = 1
     separator_color = frame
     frame_width = 1
-    frame_color = "#8A62B3"
+    frame_color = "#98c379"
     gap_size = 4
     corner_radius = 0
-    transparency = 0
+    transparency = 20
 
     icon_theme = Adwaita
     enable_recursive_icon_lookup = true
@@ -53,20 +53,20 @@
     mouse_right_click = close_all
 
 [urgency_low]
-    background = "#F5F6FA"
-    foreground = "#6F6B84"
-    highlight = "#7A4DA3"
+    background = "#20202a"
+    foreground = "#5c6370"
+    highlight = "#fb7385"
     timeout = 4
 
 [urgency_normal]
-    background = "#F5F6FA"
-    foreground = "#20202A"
-    highlight = "#7A4DA3"
+    background = "#20202a"
+    foreground = "#abb2bf"
+    highlight = "#fb7385"
     timeout = 6
 
 [urgency_critical]
-    background = "#F5F6FA"
-    foreground = "#20202A"
-    frame_color = "#C72C52"
-    highlight = "#C72C52"
+    background = "#20202a"
+    foreground = "#abb2bf"
+    frame_color = "#ff4e4e"
+    highlight = "#ff4e4e"
     timeout = 0
