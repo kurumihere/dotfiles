@@ -1,7 +1,16 @@
 require('nvim-autopairs').setup()
-require('Comment').setup()
-
 require('which-key').setup({})
+
+require('conform').setup({
+  formatters_by_ft = {
+    c = { 'clang_format' },
+    cpp = { 'clang_format' },
+    go = { 'gofmt' },
+    python = { 'isort', 'black' },
+    lua = { 'stylua' },
+  },
+  default_format_opts = { lsp_format = 'fallback' },
+})
 
 require('mini.align').setup()
 require('mini.basics').setup({ options = { extra_ui = true } })

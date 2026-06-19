@@ -13,7 +13,7 @@ local urls = {
   'https://github.com/nvim-lua/plenary.nvim',
   'https://github.com/stevearc/oil.nvim',
   'https://github.com/windwp/nvim-autopairs',
-  'https://github.com/numToStr/Comment.nvim',
+  'https://github.com/stevearc/conform.nvim',
   'https://github.com/vim-airline/vim-airline',
   'https://github.com/vim-airline/vim-airline-themes',
   'https://github.com/nvim-tree/nvim-web-devicons',
