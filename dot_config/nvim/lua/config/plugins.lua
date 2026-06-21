@@ -14,6 +14,7 @@ require('conform').setup({
 
 require('mini.align').setup()
 require('mini.basics').setup({ options = { extra_ui = true } })
+vim.diagnostic.config({ virtual_text = true })
 require('mini.clue').setup()
 require('mini.cursorword').setup()
 require('mini.doc').setup()
