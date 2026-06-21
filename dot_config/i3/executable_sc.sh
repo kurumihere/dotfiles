@@ -10,6 +10,7 @@ file="$dir/$name"
 mode="${1:-}"
 if [ -z "$mode" ]; then
   mode="$(printf 'Area\nWindow\nFull\n' | rofi -dmenu -i -p screenshot)"
+  sleep 0.2
 fi
 
 case "$mode" in
@@ -26,7 +27,6 @@ case "$mode" in
     maim --window "$window_id" --hidecursor --quiet "$file"
     ;;
   Full|full)
-    sleep 0.1
     maim --hidecursor --quiet "$file"
     ;;
   *)
