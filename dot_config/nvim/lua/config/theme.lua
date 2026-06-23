@@ -23,7 +23,7 @@ end
 vim.g.airline_theme = 'ppurpp'
 vim.o.background = is_dark_mode() and 'dark' or 'light'
 require('ppurpp').setup({
-  italic = { comments = true, strings = true, emphasis = true, folds = true, operators = true },
+  italic = { comments = true, strings = false, emphasis = false, folds = false, operators = false },
   transparent_mode = true,
 })
 vim.cmd.colorscheme('ppurpp')
