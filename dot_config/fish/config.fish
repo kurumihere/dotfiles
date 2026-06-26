@@ -46,7 +46,7 @@ if status is-interactive
 	if type -q bat
 		alias cat='bat --style=plain --paging=never'
 	end
-
+    
 	if type -q yazi
 		function yy
 			set -l tmp (mktemp -t yazi-cwd.XXXXXX)
