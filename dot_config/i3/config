@@ -9,7 +9,7 @@ exec --no-startup-id xrandr --dpi 96
 exec --no-startup-id xrdb -merge /home/kurumi/.Xresources
 exec --no-startup-id /home/kurumi/.local/bin/theme-switch auto
 exec --no-startup-id /home/kurumi/.fehbg
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -e -i /home/kurumi/Pictures/Wallpapers/k-on.png.jpg
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -e -i /home/kurumi/Pictures/Wallpapers/k-on.png
 exec --no-startup-id setxkbmap -layout us,ru -option grp:alt_shift_toggle
 exec --no-startup-id systemctl --user import-environment DISPLAY XAUTHORITY I3SOCK XDG_CURRENT_DESKTOP GTK_USE_PORTAL QT_QPA_PLATFORMTHEME
 exec --no-startup-id dbus-update-activation-environment --systemd DISPLAY XAUTHORITY I3SOCK XDG_CURRENT_DESKTOP GTK_USE_PORTAL QT_QPA_PLATFORMTHEME

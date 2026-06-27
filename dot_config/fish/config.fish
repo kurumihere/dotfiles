@@ -4,6 +4,7 @@ set -e NO_COLOR
 set -gx VISUAL nvim
 set -gx EDITOR $VISUAL
 set -gx PAGER  $VISUAL
+set -gx MANPAGER "nvim +Man!"
 fish_vi_key_bindings
 set -g fish_cursor_default block
 set -g fish_cursor_insert block
@@ -11,6 +12,7 @@ set -g fish_cursor_replace_one block
 set -g fish_cursor_visual block
 
 set -gx PROJECTS "$HOME/Projects"
+set -gx PATH "/home/kurumi/.local/bin" $PATH
 
 set -gx GOPATH "$PROJECTS/.go"
 set -gx GOMODCACHE "$GOPATH/pkg/mod"
@@ -46,7 +48,7 @@ if status is-interactive
 	if type -q bat
 		alias cat='bat --style=plain --paging=never'
 	end
-    
+
 	if type -q yazi
 		function yy
 			set -l tmp (mktemp -t yazi-cwd.XXXXXX)
