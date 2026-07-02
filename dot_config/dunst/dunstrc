@@ -23,7 +23,7 @@
     separator_height = 1
     separator_color = frame
     frame_width = 1
-    frame_color = "#98c379"
+    frame_color = "#495162"
     gap_size = 4
     corner_radius = 0
     transparency = 20

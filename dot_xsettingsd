@@ -1,15 +1,15 @@
-Net/ThemeName "Adwaita"
+Net/ThemeName "Adwaita-dark"
 Net/IconThemeName "Adwaita"
 Net/EnableEventSounds 0
 Net/EnableInputFeedbackSounds 0
 
-Gtk/ThemeName "Adwaita"
+Gtk/ThemeName "Adwaita-dark"
 Gtk/IconThemeName "Adwaita"
 Gtk/CursorThemeName "Adwaita"
 Gtk/CursorThemeSize 24
 Gtk/FontName "Noto Sans 10"
 Gtk/MonospaceFontName "JetBrainsMono Nerd Font 10"
-Gtk/ApplicationPreferDarkTheme 0
+Gtk/ApplicationPreferDarkTheme 1
 Gtk/EnableAnimations 1
 Gtk/ToolbarStyle "icons"
 Gtk/MenuImages 1

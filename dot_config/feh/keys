@@ -1,0 +1,14 @@
+# Feh custom keybindings configuration
+# Format: action [key1 [key2 [key3]]]
+
+# Navigation
+next_img Right n Space
+prev_img Left p BackSpace
+
+# Zooming
+zoom_in Up Plus equal
+zoom_out Down Minus
+
+# Screen actions
+toggle_fullscreen f F
+quit q Escape

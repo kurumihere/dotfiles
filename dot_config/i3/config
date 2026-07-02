@@ -1,5 +1,5 @@
 set $mod Mod4
-set $terminal alacritty
+set $terminal xterm
 
 font pango:JetBrainsMono Nerd Font 10
 include /home/kurumi/.config/i3/theme.conf
@@ -7,8 +7,7 @@ include /home/kurumi/.config/i3/theme.conf
 # Session
 exec --no-startup-id xrandr --dpi 96
 exec --no-startup-id xrdb -merge /home/kurumi/.Xresources
-exec --no-startup-id /home/kurumi/.local/bin/theme-switch auto
-exec --no-startup-id /home/kurumi/.fehbg
+exec --no-startup-id feh --bg-fill /home/kurumi/Pictures/Wallpapers/k-on.png
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -e -i /home/kurumi/Pictures/Wallpapers/k-on.png
 exec --no-startup-id setxkbmap -layout us,ru -option grp:alt_shift_toggle
 exec --no-startup-id systemctl --user import-environment DISPLAY XAUTHORITY I3SOCK XDG_CURRENT_DESKTOP GTK_USE_PORTAL QT_QPA_PLATFORMTHEME
@@ -17,7 +16,7 @@ exec --no-startup-id dbus-update-activation-environment --systemd DISPLAY XAUTHO
 # Services
 exec --no-startup-id systemctl --user start xsettingsd.service
 exec --no-startup-id systemctl --user start xdg-desktop-portal.service
-exec --no-startup-id systemctl --user start picom.service
+# exec --no-startup-id systemctl --user start picom.service
 exec --no-startup-id dunst
 exec_always --no-startup-id /home/kurumi/.config/polybar/launch.sh
 
@@ -30,25 +29,24 @@ smart_gaps off
 focus_follows_mouse yes
 
 # Launchers
-bindsym $mod+Return exec --no-startup-id env -u NO_COLOR $terminal
-bindsym $mod+Shift+Return exec --no-startup-id env -u NO_COLOR $terminal --command tmux new-session -A -s main
+bindsym $mod+Return exec --no-startup-id $terminal
+bindsym $mod+Shift+Return exec --no-startup-id $terminal -e tmux new-session -A -s main
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+z exec --no-startup-id /home/kurumi/.config/i3/sc.sh
-bindsym $mod+Shift+t exec --no-startup-id /home/kurumi/.local/bin/theme-switch toggle
-bindsym $mod+x exec --no-startup-id i3lock -n -e -i /home/kurumi/Pictures/Wallpapers/umineko-wallpaper.png
-bindsym XF86ScreenSaver exec --no-startup-id i3lock -n -e -i /home/kurumi/Pictures/Wallpapers/umineko-wallpaper.jpg
+bindsym $mod+x exec --no-startup-id i3lock -n -e -i /home/kurumi/Pictures/Wallpapers/k-on.png
+bindsym XF86ScreenSaver exec --no-startup-id i3lock -n -e -i /home/kurumi/Pictures/Wallpapers/k-on.png
 
 # Window focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 # Window movement
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
 # Layout
 bindsym $mod+q kill

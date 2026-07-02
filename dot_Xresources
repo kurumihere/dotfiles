@@ -4,3 +4,38 @@ Xft.hinting: 1
 Xft.hintstyle: hintslight
 Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
+
+xterm*renderFont: true
+xterm*faceName: JetBrainsMono Nerd Font
+xterm*faceSize: 10
+xterm*selectToClipboard: true
+xterm*VT100*translations: #override \n\
+    Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
+    Shift Ctrl <Key> V: insert-selection(CLIPBOARD)
+
+URxvt*font: xft:JetBrainsMono Nerd Font:size=10
+URxvt*boldFont: xft:JetBrainsMono Nerd Font:bold:size=10
+st*font: JetBrainsMono Nerd Font:size=10
+*font: xft:JetBrainsMono Nerd Font:size=10
+
+xterm*background: #20202a
+xterm*foreground: #abb2bf
+xterm*cursorColor: #dedede
+xterm*color0: #20202a
+xterm*color8: #495162
+xterm*color1: #fb7385
+xterm*color9: #fb7385
+xterm*color2: #98c379
+xterm*color10: #98c379
+xterm*color3: #e5bc66
+xterm*color11: #e5bc66
+xterm*color4: #61afef
+xterm*color12: #61afef
+xterm*color5: #ce95b8
+xterm*color13: #ce95b8
+xterm*color6: #56b6c2
+xterm*color14: #56b6c2
+xterm*color7: #abb2bf
+xterm*color15: #abb2bf
+
+
