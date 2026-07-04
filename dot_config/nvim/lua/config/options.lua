@@ -59,8 +59,3 @@ end)
 
 -- new massage pager
 require("vim._core.ui2").enable()
-
--- default theme (as fallback)
-if not vim.g.colors_name then
-    vim.cmd.colorscheme("retrobox")
-end

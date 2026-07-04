@@ -23,7 +23,7 @@ require("lazy").setup({
     },
     rocks = { enabled = false },
     ui = { backdrop = 100 },
-    install = { colorscheme = { "kanagawa" } },
+    install = { colorscheme = { "default" } },
     checker = {
         enabled = false,
         notify = false,
