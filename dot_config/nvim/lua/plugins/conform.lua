@@ -3,6 +3,8 @@ return {
     event = "VeryLazy",
     opts = {
         formatters_by_ft = {
+            c = { "clang_format" },
+            cpp = { "clang_format" },
             lua = { "stylua" },
             python = { "ruff_format", "ruff_organize_imports" },
             go = { "gofumpt", "goimports" },
