@@ -9,9 +9,17 @@ trap 'rm -rf "$build_dir"' EXIT HUP INT TERM
 git clone --quiet https://git.suckless.org/st "$build_dir/st"
 git -C "$build_dir/st" checkout --quiet "$st_commit"
 
+scrollback_patch="$build_dir/st-scrollback-0.9.2.diff"
+curl -fsSL \
+	https://st.suckless.org/patches/scrollback/st-scrollback-0.9.2.diff \
+	-o "$scrollback_patch"
+echo "8db63bf83df06cba12cdb02e578cb49afc789c726b4c85f66e95b372562bac7a  $scrollback_patch" \
+	| sha256sum -c -
+patch -d "$build_dir/st" -p1 < "$scrollback_patch"
+
 patch -d "$build_dir/st" -p1 <<'PATCH'
 diff --git a/config.def.h b/config.def.h
-index 2cd740a..6fd86cc 100644
+index 40b7d93..02e6079 100644
 --- a/config.def.h
 +++ b/config.def.h
 @@ -5,7 +5,7 @@
@@ -74,6 +82,10 @@ index 2cd740a..6fd86cc 100644
 +	"#20202a", /* default background */
  };
 PATCH
+
+sed -i '/#define TERMMOD/a#define SCROLLSTEP 5' "$build_dir/st/config.def.h"
+sed -i '/XK_Page_Up/s/{.i = -1}/{.i = +SCROLLSTEP}/' "$build_dir/st/config.def.h"
+sed -i '/XK_Page_Down/s/{.i = -1}/{.i = +SCROLLSTEP}/' "$build_dir/st/config.def.h"
 
 cp "$build_dir/st/config.def.h" "$build_dir/st/config.h"
 make -C "$build_dir/st" clean install PREFIX="{{ .chezmoi.homeDir }}/.local"
