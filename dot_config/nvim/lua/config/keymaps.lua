@@ -17,6 +17,6 @@ vim.keymap.set("t", "<esc>", "<c-\\><c-n>", { desc = "exit terminal mode" })
 vim.keymap.set("n", "<esc>", vim.cmd.noh, { desc = "clear search highlight" })
 vim.keymap.set("n", "<leader><leader>", "<c-^>", { desc = "switch to last buffer" })
 vim.keymap.set("n", "<leader>w", "<cmd>write<cr>", { desc = "save file" })
-vim.keymap.set("n", "<leader>q!", "<cmd>quit!<cr>", { desc = "quit without saving" })
+vim.keymap.set("n", "<leader>q", "<cmd>quit!<cr>", { desc = "quit without saving" })
 
 vim.keymap.set("n", "<leader>u", "<cmd>Undotree<cr>", { desc = "unodtree toggle" })
