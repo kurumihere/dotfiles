@@ -1,0 +1,79 @@
+#!/bin/sh
+set -eu
+
+# Rebuild when this script or the embedded patch changes.
+st_commit=04ce0d6
+build_dir="$(mktemp -d)"
+trap 'rm -rf "$build_dir"' EXIT HUP INT TERM
+
+git clone --quiet https://git.suckless.org/st "$build_dir/st"
+git -C "$build_dir/st" checkout --quiet "$st_commit"
+
+patch -d "$build_dir/st" -p1 <<'PATCH'
+diff --git a/config.def.h b/config.def.h
+index 2cd740a..6fd86cc 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -5,7 +5,7 @@
+  *
+  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
+  */
+-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
++static char *font = "JetBrainsMono Nerd Font:size=10:antialias=true:autohint=true";
+ static int borderpx = 2;
+ 
+ /*
+@@ -96,32 +96,32 @@ unsigned int tabspaces = 8;
+ static const char *colorname[] = {
+ 	/* 8 normal colors */
+-	"black",
+-	"red3",
+-	"green3",
+-	"yellow3",
+-	"blue2",
+-	"magenta3",
+-	"cyan3",
+-	"gray90",
++	"#20202a",
++	"#fb7385",
++	"#98c379",
++	"#e5bc66",
++	"#61afef",
++	"#ce95b8",
++	"#56b6c2",
++	"#abb2bf",
+ 
+ 	/* 8 bright colors */
+-	"gray50",
+-	"red",
+-	"green",
+-	"yellow",
+-	"#5c5cff",
+-	"magenta",
+-	"cyan",
+-	"white",
++	"#495162",
++	"#fb7385",
++	"#98c379",
++	"#e5bc66",
++	"#61afef",
++	"#ce95b8",
++	"#56b6c2",
++	"#abb2bf",
+ 
+ 	[255] = 0,
+ 
+ 	/* more colors can be added after 255 to use with DefaultXX */
+-	"#cccccc",
+-	"#555555",
+-	"gray90", /* default foreground colour */
+-	"black", /* default background colour */
++	"#abb2bf",
++	"#495162",
++	"#dedede", /* cursor */
++	"#20202a", /* default background */
+ };
+PATCH
+
+cp "$build_dir/st/config.def.h" "$build_dir/st/config.h"
+make -C "$build_dir/st" clean install PREFIX="{{ .chezmoi.homeDir }}/.local"
