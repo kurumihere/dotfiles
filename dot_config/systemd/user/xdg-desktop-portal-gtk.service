@@ -5,3 +5,6 @@ Description=Portal service (GTK/GNOME implementation)
 Type=dbus
 BusName=org.freedesktop.impl.portal.desktop.gtk
 ExecStart=/usr/lib/xdg-desktop-portal-gtk
+
+[Install]
+WantedBy=default.target
