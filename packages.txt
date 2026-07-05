@@ -9,7 +9,6 @@ chezmoi
 clang
 cmus
 discord
-dmenu
 dunst
 efibootmgr
 eza
@@ -20,6 +19,7 @@ firefox
 fzf
 geoclue
 git
+go
 gvfs
 gvfs-mtp
 gnome-themes-extra
@@ -71,6 +71,7 @@ ttf-jetbrains-mono-nerd
 ttf-liberation
 unzip
 wget
+wireless-regdb
 wireplumber
 xclip
 xdg-desktop-portal
@@ -85,13 +86,14 @@ xorg-xwininfo
 xsettingsd
 xss-lock
 xterm
+yay
 yazi
+zip
 zoxide
 zram-generator
 amneziavpn-bin
 lib32-nvidia-470xx-utils
 lib32-opencl-nvidia-470xx
-libxnvctrl-470xx
 neovim-symlinks
 nvidia-470xx-dkms
 nvidia-470xx-settings

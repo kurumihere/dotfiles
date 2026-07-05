@@ -1,5 +1,12 @@
 #!/bin/sh
 export PATH="$HOME/.local/bin:$PATH"
+export QT_QPA_PLATFORMTHEME=qt5ct
+export GTK_USE_PORTAL=1
+export XDG_CURRENT_DESKTOP=i3
 
 xrdb -merge /home/kurumi/.Xresources &
 setxkbmap -layout us,ru -option grp:alt_shift_toggle &
+
+# Make X session variables visible to the user systemd manager before desktop portals start.
+systemctl --user import-environment DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP GTK_USE_PORTAL QT_QPA_PLATFORMTHEME
+dbus-update-activation-environment --systemd DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP GTK_USE_PORTAL QT_QPA_PLATFORMTHEME
