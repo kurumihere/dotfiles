@@ -8,8 +8,12 @@ include ~/.config/i3/theme.conf
 exec --no-startup-id xrandr --dpi 96
 exec --no-startup-id sh -c 'feh --bg-fill "${XDG_PICTURES_DIR:-$HOME/pictures}/wallpapers/k-on.png"'
 exec --no-startup-id xset s off -dpms
+exec --no-startup-id sh -c 'systemctl --user import-environment DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP GTK_USE_PORTAL QT_QPA_PLATFORMTHEME && dbus-update-activation-environment --systemd DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP GTK_USE_PORTAL QT_QPA_PLATFORMTHEME'
 
 # Services
+exec_always --no-startup-id sh -c 'pkill -x xsettingsd >/dev/null 2>&1; xsettingsd'
+exec_always --no-startup-id sh -c 'pkill -x dunst >/dev/null 2>&1; dunst'
+exec_always --no-startup-id sh -c 'pkill -x picom >/dev/null 2>&1; picom --config "$HOME/.config/picom/picom.conf"'
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # Appearance
@@ -24,8 +28,8 @@ focus_follows_mouse yes
 bindsym $mod+Return exec --no-startup-id $terminal
 bindsym $mod+Shift+Return exec --no-startup-id $terminal -e tmux new-session -A -s main
 bindsym $mod+d exec --no-startup-id dmenu_run -i
-bindsym $mod+z exec --no-startup-id $config_home/i3/sc.sh area
-bindsym Print exec --no-startup-id $config_home/i3/sc.sh full
+bindsym $mod+z exec --no-startup-id ~/.config/i3/sc.sh area
+bindsym Print exec --no-startup-id ~/.config/i3/sc.sh full
 bindsym $mod+x exec --no-startup-id sh -c 'i3lock -n -e -i "${XDG_PICTURES_DIR:-$HOME/pictures}/wallpapers/k-on.png"'
 
 # Window focus
