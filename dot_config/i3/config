@@ -10,7 +10,7 @@ exec --no-startup-id sh -c 'feh --bg-fill "${XDG_PICTURES_DIR:-$HOME/pictures}/w
 exec --no-startup-id xset s off -dpms
 
 # Services
-exec_always --no-startup-id $config_home/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # Appearance
 for_window [class=".*"] border pixel 1
