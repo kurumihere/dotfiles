@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 set -eu
 
-dir="${XDG_PICTURES_DIR:-$HOME/Pictures}/Screenshots"
+dir="${XDG_PICTURES_DIR:-$HOME/pictures}/screenshots"
 mkdir -p "$dir"
 
 name="screenshot-$(date +%Y-%m-%d_%H-%M-%S).png"
@@ -20,3 +20,5 @@ case "${1:-area}" in
 esac
 
 xclip -selection clipboard -t image/png -i "$file"
+
+notify-send -i camera-photo "Screenshot saved" "$file"

@@ -4,7 +4,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export GTK_USE_PORTAL=1
 export XDG_CURRENT_DESKTOP=i3
 
-xrdb -merge /home/kurumi/.Xresources &
+xrdb -merge ~/.Xresources &
 setxkbmap -layout us,ru -option grp:alt_shift_toggle &
 
 # Make X session variables visible to the user systemd manager before desktop portals start.
