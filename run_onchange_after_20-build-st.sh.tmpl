@@ -2,7 +2,7 @@
 set -eu
 
 # Rebuild when this script or the embedded patch changes.
-st_commit=04ce0d6
+st_commit=6e970474743d57a5d8b054c41fd3bff2bc895742
 build_dir="$(mktemp -d)"
 trap 'rm -rf "$build_dir"' EXIT HUP INT TERM
 
@@ -16,6 +16,14 @@ curl -fsSL \
 echo "8db63bf83df06cba12cdb02e578cb49afc789c726b4c85f66e95b372562bac7a  $scrollback_patch" \
 	| sha256sum -c -
 patch -d "$build_dir/st" -p1 < "$scrollback_patch"
+
+ligatures_patch="$build_dir/st-ligatures-scrollback-0.9.3.diff"
+curl -fsSL \
+	https://st.suckless.org/patches/ligatures/0.9.3/st-ligatures-scrollback-20251007-0.9.3.diff \
+	-o "$ligatures_patch"
+echo "13a37703d6ccd7c869a2c9a69316cea27678424c936265ae86c46681c3905128  $ligatures_patch" \
+	| sha256sum -c -
+patch -d "$build_dir/st" -p1 < "$ligatures_patch"
 
 patch -d "$build_dir/st" -p1 <<'PATCH'
 diff --git a/config.def.h b/config.def.h
@@ -31,7 +39,7 @@ index 40b7d93..02e6079 100644
  static int borderpx = 2;
  
  /*
-@@ -96,32 +96,32 @@ unsigned int tabspaces = 8;
+@@ -96,29 +96,29 @@ unsigned int tabspaces = 8;
  static const char *colorname[] = {
  	/* 8 normal colors */
 -	"black",
@@ -81,6 +89,13 @@ index 40b7d93..02e6079 100644
 +	"#dedede", /* cursor */
 +	"#20202a", /* default background */
  };
+@@ -190,1 +190,6 @@ static Shortcut shortcuts[] = {
+ static Shortcut shortcuts[] = {
++	{ TERMMOD,              XK_plus,        zoom,           {.f = +5} },
++	{ ControlMask,          XK_minus,       zoom,           {.f = -5} },
++	{ TERMMOD,              XK_underscore,  zoom,           {.f = -5} },
++	{ ControlMask,          XK_0,           zoomreset,      {.f =  0} },
++	{ TERMMOD,              XK_parenright,  zoomreset,      {.f =  0} },
 PATCH
 
 sed -i '/#define TERMMOD/a#define SCROLLSTEP 5' "$build_dir/st/config.def.h"
