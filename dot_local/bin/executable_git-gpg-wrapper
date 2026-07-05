@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+GPG_BIN=/usr/bin/gpg
+XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-"/run/user/$(id -u)"}
+GPG_RUNTIME_DIR="${XDG_RUNTIME_DIR}/gnupg"
+
+launch_agent() {
+  gpgconf --launch gpg-agent >/dev/null 2>&1 || gpg-connect-agent /bye >/dev/null 2>&1
+}
+
+if ! gpg-connect-agent /bye >/dev/null 2>&1; then
+  if [ -d "${GPG_RUNTIME_DIR}" ]; then
+    rm -f \
+      "${GPG_RUNTIME_DIR}/S.gpg-agent" \
+      "${GPG_RUNTIME_DIR}/S.gpg-agent.browser" \
+      "${GPG_RUNTIME_DIR}/S.gpg-agent.extra" \
+      "${GPG_RUNTIME_DIR}/S.gpg-agent.ssh" \
+      "${GPG_RUNTIME_DIR}/S.dirmngr" \
+      "${GPG_RUNTIME_DIR}/S.keyboxd"
+  fi
+  launch_agent
+fi
+
+exec "${GPG_BIN}" "$@"
