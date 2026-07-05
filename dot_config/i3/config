@@ -12,10 +12,6 @@ exec --no-startup-id systemctl --user import-environment DISPLAY XAUTHORITY I3SO
 exec --no-startup-id dbus-update-activation-environment --systemd DISPLAY XAUTHORITY I3SOCK XDG_CURRENT_DESKTOP GTK_USE_PORTAL QT_QPA_PLATFORMTHEME
 
 # Services
-exec --no-startup-id systemctl --user start xsettingsd.service
-exec --no-startup-id systemctl --user start xdg-desktop-portal.service
-exec --no-startup-id systemctl --user start picom.service
-exec --no-startup-id dunst
 exec_always --no-startup-id /home/kurumi/.config/polybar/launch.sh
 
 # Appearance
@@ -29,8 +25,9 @@ focus_follows_mouse yes
 # Launchers
 bindsym $mod+Return exec --no-startup-id $terminal
 bindsym $mod+Shift+Return exec --no-startup-id $terminal -e tmux new-session -A -s main
-bindsym $mod+d exec --no-startup-id rofi -show drun
-bindsym $mod+z exec --no-startup-id /home/kurumi/.config/i3/sc.sh
+bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+z exec --no-startup-id /home/kurumi/.config/i3/sc.sh area
+bindsym Print exec --no-startup-id /home/kurumi/.config/i3/sc.sh full
 bindsym $mod+x exec --no-startup-id i3lock -n -e -i /home/kurumi/Pictures/Wallpapers/k-on.png
 
 # Window focus
