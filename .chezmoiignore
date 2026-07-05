@@ -1,5 +1,3 @@
 .git/
 .gitignore
-README.md
-LICENSE
-packages/
+packages.txt
