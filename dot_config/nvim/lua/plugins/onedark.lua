@@ -12,7 +12,7 @@ return {
                 comments = "italic",
                 keywords = "bold",
                 functions = "bold",
-                strings = "italic",
+                strings = "none",
                 variables = "none",
             },
             lualine = {
