@@ -1,7 +1,5 @@
 #!/bin/sh
 export PATH="$HOME/.local/bin:$PATH"
 
-export QT_QPA_PLATFORMTHEME=qt5ct
-
 xrdb -merge /home/kurumi/.Xresources &
 setxkbmap -layout us,ru -option grp:alt_shift_toggle &

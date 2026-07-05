@@ -1,0 +1,24 @@
+#!/bin/sh
+set -eu
+
+# Rebuild when this script changes.
+build_dir="$(mktemp -d)"
+trap 'rm -rf "$build_dir"' EXIT HUP INT TERM
+
+if ! git clone --quiet https://git.suckless.org/dmenu "$build_dir/dmenu"; then
+    echo "dmenu source unavailable; skipping rebuild"
+    exit 0
+fi
+
+sed -i \
+    -e 's/monospace:size=10/JetBrainsMono Nerd Font:size=12:antialias=true:autohint=true/' \
+    -e 's/#222222/#20202a/' \
+    -e 's/#bbbbbb/#abb2bf/' \
+    -e 's/#005577/#495162/' \
+    -e 's/#eeeeee/#dedede/' \
+    -e 's/#00ffff/#495162/' \
+    -e 's/#000000/#dedede/' \
+    "$build_dir/dmenu/config.def.h"
+
+cp "$build_dir/dmenu/config.def.h" "$build_dir/dmenu/config.h"
+make -C "$build_dir/dmenu" clean install PREFIX="$HOME/.local"
