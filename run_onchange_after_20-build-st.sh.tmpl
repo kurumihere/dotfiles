@@ -17,14 +17,6 @@ echo "8db63bf83df06cba12cdb02e578cb49afc789c726b4c85f66e95b372562bac7a  $scrollb
 	| sha256sum -c -
 patch -d "$build_dir/st" -p1 < "$scrollback_patch"
 
-ligatures_patch="$build_dir/st-ligatures-scrollback-0.9.3.diff"
-curl -fsSL \
-	https://st.suckless.org/patches/ligatures/0.9.3/st-ligatures-scrollback-20251007-0.9.3.diff \
-	-o "$ligatures_patch"
-echo "13a37703d6ccd7c869a2c9a69316cea27678424c936265ae86c46681c3905128  $ligatures_patch" \
-	| sha256sum -c -
-patch -d "$build_dir/st" -p1 < "$ligatures_patch"
-
 patch -d "$build_dir/st" -p1 <<'PATCH'
 diff --git a/config.def.h b/config.def.h
 index 40b7d93..02e6079 100644
