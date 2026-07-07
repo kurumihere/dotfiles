@@ -2,6 +2,7 @@ let mapleader = "'"
 
 syntax on
 filetype plugin indent on
+
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -18,6 +19,7 @@ set iminsert=0
 set imsearch=0
 set autoindent
 set autochdir
+set showcmd
 colorscheme habamax
 
 autocmd BufEnter * if &filetype == "go" | setlocal noexpandtab
