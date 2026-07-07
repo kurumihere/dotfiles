@@ -51,7 +51,7 @@ if [[ $- == *i* ]]; then
     parse_git_branch() {
         git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
     }
-    export PS1="[\u@\[\033[01;38;2;251;115;133m\]\h\[\033[00m\] \W]\$ "
+    export PS1="[\u@\[\033[01;38;2;244;56;65m\]\h\[\033[00m\] \W]\$ "
 
     alias ls='ls --color=auto'
     alias ll='ls -lh --color=auto'
