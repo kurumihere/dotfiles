@@ -8,7 +8,7 @@ Gtk/IconThemeName "Adwaita"
 Gtk/CursorThemeName "Adwaita"
 Gtk/CursorThemeSize 24
 Gtk/FontName "Noto Sans 10"
-Gtk/MonospaceFontName "JetBrainsMono Nerd Font 10"
+Gtk/MonospaceFontName "Iosevka Nerd Font 12"
 Gtk/ApplicationPreferDarkTheme 1
 Gtk/EnableAnimations 1
 Gtk/ToolbarStyle "icons"

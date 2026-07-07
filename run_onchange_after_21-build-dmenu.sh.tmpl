@@ -11,13 +11,7 @@ if ! git clone --quiet https://git.suckless.org/dmenu "$build_dir/dmenu"; then
 fi
 
 sed -i \
-    -e 's/monospace:size=10/JetBrainsMono Nerd Font:size=12:antialias=true:autohint=true/' \
-    -e 's/#222222/#20202a/' \
-    -e 's/#bbbbbb/#abb2bf/' \
-    -e 's/#005577/#495162/' \
-    -e 's/#eeeeee/#dedede/' \
-    -e 's/#00ffff/#495162/' \
-    -e 's/#000000/#dedede/' \
+    -e 's/monospace:size=10/Iosevka Nerd Font:size=12:antialias=true:autohint=true/' \
     "$build_dir/dmenu/config.def.h"
 
 cp "$build_dir/dmenu/config.def.h" "$build_dir/dmenu/config.h"

@@ -7,7 +7,7 @@
     height = (0, 220)
     notification_limit = 5
 
-    font = JetBrainsMono Nerd Font 10
+    font = Iosevka Nerd Font 12
     markup = full
     format = "<b>%s</b>\n%b"
     alignment = left
@@ -23,7 +23,6 @@
     separator_height = 1
     separator_color = frame
     frame_width = 1
-    frame_color = "#495162"
     gap_size = 4
     corner_radius = 0
     transparency = 20
@@ -53,20 +52,10 @@
     mouse_right_click = close_all
 
 [urgency_low]
-    background = "#20202a"
-    foreground = "#5c6370"
-    highlight = "#fb7385"
     timeout = 4
 
 [urgency_normal]
-    background = "#20202a"
-    foreground = "#abb2bf"
-    highlight = "#fb7385"
     timeout = 6
 
 [urgency_critical]
-    background = "#20202a"
-    foreground = "#abb2bf"
-    frame_color = "#ff4e4e"
-    highlight = "#ff4e4e"
     timeout = 0

@@ -8,4 +8,4 @@ Xft.lcdfilter: lcddefault
 Xcursor.theme: Adwaita
 Xcursor.size: 24
 
-Emacs.font: JetBrainsMono Nerd Font-12
+Emacs.font: Iosevka Nerd Font-12
