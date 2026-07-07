@@ -76,7 +76,7 @@ fi
 
 export NVM_DIR="$HOME/.nvm"
 _lazy_load_nvm() {
-    unset -f nvm node npm npx yarn pnpm
+    unset -f nvm node npm npx yarn pnpm codex
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 }
@@ -86,5 +86,6 @@ npm() { _lazy_load_nvm; npm "$@"; }
 npx() { _lazy_load_nvm; npx "$@"; }
 yarn() { _lazy_load_nvm; yarn "$@"; }
 pnpm() { _lazy_load_nvm; pnpm "$@"; }
+codex() { _lazy_load_nvm; codex "$@"; }
 
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
