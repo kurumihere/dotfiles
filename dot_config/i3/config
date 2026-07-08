@@ -10,6 +10,7 @@ exec --no-startup-id xset s off -dpms
 exec --no-startup-id sh -c 'systemctl --user import-environment DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP GTK_USE_PORTAL QT_QPA_PLATFORMTHEME && dbus-update-activation-environment --systemd DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP GTK_USE_PORTAL QT_QPA_PLATFORMTHEME'
 
 # Services
+exec_always --no-startup-id xsetroot -cursor_name left_ptr
 exec_always --no-startup-id sh -c 'pkill -x xsettingsd >/dev/null 2>&1; xsettingsd'
 exec_always --no-startup-id sh -c 'pkill -x dunst >/dev/null 2>&1; dunst'
 exec_always --no-startup-id sh -c 'pkill -x picom >/dev/null 2>&1; picom --config "$HOME/.config/picom/picom.conf"'

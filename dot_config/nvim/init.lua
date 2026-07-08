@@ -29,7 +29,7 @@ require("lazy").setup({
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    lazy = false,
+    event = { "BufReadPost", "BufNewFile" },
     build = ":TSUpdate",
     config = function()
       require("nvim-treesitter").setup({
@@ -42,6 +42,7 @@ require("lazy").setup({
   },
   {
     'Saghen/blink.cmp',
+    lazy = true,
     dependencies = 'rafamadriz/friendly-snippets',
     version = '*',
     opts = {
@@ -61,13 +62,32 @@ require("lazy").setup({
   },
   {
     'neovim/nvim-lspconfig',
+    event = { "BufReadPost", "BufNewFile" },
     dependencies = { 'Saghen/blink.cmp' },
     config = function()
       local capabilities = require('blink.cmp').get_lsp_capabilities()
       vim.lsp.config('*', { capabilities = capabilities })
       vim.lsp.enable({ "lua_ls", "pyright", "rust_analyzer", "gopls", "clangd" })
     end
+  },
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    dependencies = { "nvim-tree/nvim-web-devicons" },
   }
+}, {
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    },
+  },
 })
 
 vim.opt.tabstop = 4
@@ -85,6 +105,8 @@ vim.opt.imsearch = 0
 vim.opt.autoindent = true
 vim.opt.autochdir = true
 vim.opt.showcmd = true
+vim.opt.laststatus = 0 -- Hide statusline (0: never, 1: only with splits (Vim default), 2: always, 3: global statusline)
+vim.opt.ruler = false -- Hide the cursor position in the bottom right corner (ruler)
 
 vim.diagnostic.config({
   virtual_text = {
@@ -114,3 +136,4 @@ vim.cmd("colorscheme habamax")
 vim.keymap.set("n", "gf", ":e <cfile><CR>", { silent = true })
 vim.keymap.set("n", "<leader>w", ":w<CR>", { silent = true })
 vim.keymap.set("n", "<leader>q", ":confirm q<CR>", { silent = true })
+vim.keymap.set("n", "<leader>o", "<CMD>Oil<CR>", { silent = true })
