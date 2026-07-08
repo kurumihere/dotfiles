@@ -48,7 +48,10 @@ require("lazy").setup({
     opts = {
       keymap = {
         preset = 'default',
-        ['<CR>'] = { 'fallback' },
+        ['<CR>'] = { 'accept', 'fallback' },
+        ['<C-y>'] = {},
+        ['<C-j>'] = { 'select_next', 'fallback' },
+        ['<C-k>'] = { 'select_prev', 'fallback' },
       },
       appearance = {
         use_nvim_cmp_as_default = true,
