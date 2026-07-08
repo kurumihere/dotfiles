@@ -5,7 +5,7 @@ Net/EnableInputFeedbackSounds 0
 
 Gtk/ThemeName "Adwaita-dark"
 Gtk/IconThemeName "Adwaita"
-Gtk/CursorThemeName "Adwaita"
+Gtk/CursorThemeName "core"
 Gtk/CursorThemeSize 24
 Gtk/FontName "Noto Sans 10"
 Gtk/MonospaceFontName "Iosevka Nerd Font 12"

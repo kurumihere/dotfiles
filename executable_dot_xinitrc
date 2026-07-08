@@ -1,5 +1,11 @@
 #!/bin/sh
 
-[ -f "$HOME/.xprofile" ] && . "$HOME/.xprofile"
+export PATH="$HOME/.local/bin:$PATH"
+export QT_QPA_PLATFORMTHEME=qt5ct
+export GTK_USE_PORTAL=1
+export XDG_CURRENT_DESKTOP=i3
+
+xrdb -merge ~/.Xresources &
+setxkbmap -layout us,ru -option grp:alt_shift_toggle &
 
 exec dbus-run-session i3

@@ -19,7 +19,7 @@ default_border normal 1
 default_floating_border normal 1
 for_window [class=".*"] border normal 1
 floating_modifier $mod
-focus_follows_mouse yes
+focus_follows_mouse no
 
 # Launchers
 bindsym $mod+Return exec --no-startup-id $terminal
