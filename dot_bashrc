@@ -30,9 +30,9 @@ export PROMPT_COMMAND="history -a${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
 alias grep='grep --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip -color=auto'
-alias rm='rm -i'
-alias cp='cp -iv'
-alias mv='mv -iv'
+alias rm='rm -v'
+alias cp='cp -v'
+alias mv='mv -v'
 
 if [[ $- == *i* ]]; then
     bind "set completion-ignore-case on"
