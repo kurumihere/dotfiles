@@ -12,6 +12,8 @@ chezmoi
 clang
 cmus
 discord
+docker
+docker-compose
 dunst
 efibootmgr
 eza
@@ -49,6 +51,8 @@ marksman
 mkinitcpio
 mpv
 ncdu
+neovim
+neovim-symlinks
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
@@ -60,7 +64,6 @@ opencl-nvidia-470xx
 openssh
 pacman-contrib
 pavucontrol
-pcmanfm
 picom
 pipewire
 pipewire-alsa
@@ -83,7 +86,6 @@ ttf-jetbrains-mono-nerd
 ttf-liberation
 unzip
 upower
-vim
 wget
 wireless-regdb
 wireplumber
