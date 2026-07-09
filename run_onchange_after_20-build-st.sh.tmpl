@@ -25,22 +25,8 @@ echo "8429911491c6adac876af0b9a5aa0c42d93c71977fd712f0fa40a6a748c12567  $glyph_p
 	| sha256sum -c -
 patch -d "$build_dir/st" -p1 < "$glyph_patch"
 
-patch -d "$build_dir/st" -p1 <<'PATCH'
-diff --git a/config.def.h b/config.def.h
-index 40b7d93..02e6079 100644
---- a/config.def.h
-+++ b/config.def.h
-@@ -5,7 +5,7 @@
-  *
-  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
-  */
--static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
-+static char *font = "Iosevka Nerd Font:size=14:antialias=true:autohint=true";
- static int borderpx = 2;
- 
- /*
-
-PATCH
+sed -i 's|^static char \*font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";$|static char *font = "Iosevka Nerd Font:size=14:antialias=true:autohint=true";|' "$build_dir/st/config.def.h"
+sed -i 's|^static int borderpx = 2;$|static int borderpx = 0;|' "$build_dir/st/config.def.h"
 
 sed -i '/XK_Home,        zoomreset/a\
 \	{ ControlMask,          XK_equal,       zoom,           {.f = +1} },\
