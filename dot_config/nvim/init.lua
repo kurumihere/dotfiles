@@ -130,9 +130,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
 })
 
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-vim.opt.foldlevel = 99
 
 vim.cmd("colorscheme habamax")
 
