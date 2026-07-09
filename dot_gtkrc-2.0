@@ -6,5 +6,5 @@ style "user-config"
 widget_class "*" style "user-config"
 gtk-theme-name="Adwaita-dark"
 gtk-icon-theme-name="Adwaita"
-gtk-cursor-theme-name="cursorfont"
+gtk-cursor-theme-name="Adwaita"
 gtk-cursor-theme-size=24
