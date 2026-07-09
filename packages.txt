@@ -27,11 +27,9 @@ git
 github-cli
 gnome-themes-extra
 go
+gopls
 gst-plugin-pipewire
-gvfs
-gvfs-mtp
 i3-wm
-i3lock
 i3status
 inxi
 jq

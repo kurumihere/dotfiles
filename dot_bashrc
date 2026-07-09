@@ -3,6 +3,7 @@ export EDITOR=$VISUAL
 export PAGER=less
 export MANPAGER=less
 
+export PROJECTS="$HOME/projects"
 export GOPATH="$PROJECTS/.go"
 export GOMODCACHE="$GOPATH/pkg/mod"
 export GOCACHE="$GOPATH/cache/build"
