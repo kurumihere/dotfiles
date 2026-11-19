@@ -10,7 +10,6 @@ eza
 fastfetch
 foot
 fuzzel
-gapless
 git
 github-cli
 gnome-text-editor
@@ -29,6 +28,7 @@ mako
 man-db
 man-pages
 mesa
+meson
 mpv
 nautilus
 ncdu
@@ -54,6 +54,7 @@ telegram-desktop
 tree-sitter-cli
 ttf-iosevkaterm-nerd
 unzip
+vala
 vulkan-radeon
 waybar
 wget
