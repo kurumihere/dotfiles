@@ -1,7 +1,7 @@
 [user]
 	name = kurumihere
 	email = kurumihere@disroot.org
-	signingkey = C778836EA0EF5B39
+	signingkey = 26D3C8B5C98062A1
 
 [commit]
 	gpgsign = true

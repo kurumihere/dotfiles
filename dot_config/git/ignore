@@ -41,3 +41,5 @@ pnpm-debug.log*
 *.old
 *.orig
 *.rej
+
+**/.claude/settings.local.json
