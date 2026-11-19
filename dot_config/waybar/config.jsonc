@@ -1,0 +1,56 @@
+{
+    "layer": "top",
+    "position": "left",
+    "width": 42,
+    "spacing": 0,
+    "modules-left": [
+        "niri/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "tray",
+        "network",
+        "pulseaudio"
+    ],
+    "niri/workspaces": {
+        "format": "",
+        "all-outputs": false
+    },
+    "clock": {
+        "format": "{:%H\n%M\n<span color=\"#6b6377\">–</span>\n<span color=\"#9f86d6\">%d\n%m</span>}",
+        "tooltip": false,
+        "interval": 1,
+        "justify": "center",
+        "align": 0.5
+    },
+    "tray": {
+        "icon-size": 20,
+        "spacing": 8,
+        "show-passive-items": true
+    },
+    "network": {
+        "format": " ",
+        "format-ethernet": " ",
+        "format-wifi": " ",
+        "format-disconnected": " ",
+        "tooltip-format-ethernet": "{ifname}: {ipaddr}\n {bandwidthDownBits}  {bandwidthUpBits}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}\n {bandwidthDownBits}  {bandwidthUpBits}",
+        "tooltip-format-disconnected": "Disconnected",
+        "interval": 5
+    },
+    "pulseaudio": {
+        "format": " ",
+        "format-muted": " ",
+        "states": {
+            "high": 66,
+            "medium": 33,
+            "low": 0
+        },
+        "scroll-step": 5,
+        "tooltip": true,
+        "tooltip-format": "{volume}%",
+        "on-click": "foot -a wiremix -T wiremix wiremix"
+    }
+}

@@ -1,0 +1,201 @@
+* {
+    font-family: "IosevkaTerm NF";
+    font-size: 16px;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
+    transition-property: color, background-color, box-shadow, min-height, min-width, padding;
+    transition-duration: 180ms;
+    transition-timing-function: ease-out;
+}
+
+window#waybar {
+    background: rgba(21, 19, 26, 0.85);
+    color: #f2eef5;
+    border-right: 2px solid #3d3649;
+}
+
+tooltip {
+    background: #18151e;
+    color: #f2eef5;
+    border: 1px solid #4d445d;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+tooltip label {
+    color: #f2eef5;
+}
+
+#workspaces {
+    margin-top: 10px;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+}
+
+#workspaces button {
+    min-width: 14px;
+    min-height: 24px;
+    margin: 5px 12px;
+    padding: 0;
+    background: #4d445d;
+    color: transparent;
+    border-radius: 999px;
+    box-shadow: none;
+    font-size: 0;
+}
+
+#workspaces button:hover {
+    background: #6b6377;
+    color: transparent;
+    box-shadow: none;
+}
+
+#workspaces button.active {
+    min-width: 14px;
+    min-height: 36px;
+    margin: 5px 12px;
+    padding: 0;
+    background: #9f86d6;
+    color: transparent;
+    border-radius: 999px;
+    box-shadow: none;
+}
+
+#workspaces button.urgent {
+    background: #e57373;
+    color: transparent;
+    box-shadow: none;
+}
+
+#workspaces button.empty:not(.active),
+#workspaces button.empty:not(.active):hover {
+    opacity: 0;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    font-size: 0;
+    transition: none;
+}
+
+#clock {
+    padding: 8px 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #f2eef5;
+    background: transparent;
+    border-radius: 0;
+    margin: 0;
+}
+
+#tray {
+    margin: 6px 0;
+    padding: 0;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+#network {
+    margin: 8px 0;
+    min-width: 40px;
+    min-height: 22px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+    background-image: url("/home/kurumi/.config/waybar/icons/adwaita/network-wired.svg");
+    color: #ffffff;
+}
+
+#network.ethernet {
+    background-image: url("/home/kurumi/.config/waybar/icons/adwaita/network-wired.svg");
+}
+
+#network.linked {
+    background-image: url("/home/kurumi/.config/waybar/icons/adwaita/network-wired-acquiring.svg");
+}
+
+#network.disconnected,
+#network.disabled {
+    background-image: url("/home/kurumi/.config/waybar/icons/adwaita/network-wired-disconnected.svg");
+    opacity: 0.6;
+}
+
+#network.wifi {
+    background-image: url("/home/kurumi/.config/waybar/icons/adwaita/network-wireless.svg");
+}
+
+#pulseaudio {
+    margin: 8px 0 16px 0;
+    min-width: 40px;
+    min-height: 22px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+    background-image: url("/home/kurumi/.config/waybar/icons/adwaita/audio-volume-high.svg");
+    color: #ffffff;
+}
+
+#pulseaudio.high {
+    background-image: url("/home/kurumi/.config/waybar/icons/adwaita/audio-volume-high.svg");
+}
+
+#pulseaudio.medium {
+    background-image: url("/home/kurumi/.config/waybar/icons/adwaita/audio-volume-medium.svg");
+}
+
+#pulseaudio.low {
+    background-image: url("/home/kurumi/.config/waybar/icons/adwaita/audio-volume-low.svg");
+}
+
+#pulseaudio.muted,
+#pulseaudio.source-muted {
+    background-image: url("/home/kurumi/.config/waybar/icons/adwaita/audio-volume-muted.svg");
+    opacity: 0.6;
+}
+
+menu,
+.menu {
+    background-color: #18151e;
+    color: #f2eef5;
+    border: 1px solid #3d3649;
+    border-radius: 8px;
+    padding: 6px;
+}
+
+menuitem,
+.menuitem {
+    background-color: transparent;
+    color: #f2eef5;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+menuitem:hover,
+.menuitem:hover {
+    background-color: #342e40;
+    color: #9f86d6;
+}
+
+menuitem label {
+    color: #f2eef5;
+}
+
+menuitem:hover label {
+    color: #9f86d6;
+}
+
+menu separator {
+    background-color: #4d445d;
+    min-height: 1px;
+    margin: 4px 0;
+}
