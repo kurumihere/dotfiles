@@ -37,7 +37,6 @@ neovim-symlinks
 niri
 noto-fonts
 noto-fonts-emoji
-obs-studio
 openssh
 pacman-contrib
 pipewire
