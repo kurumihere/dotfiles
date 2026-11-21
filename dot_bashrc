@@ -15,4 +15,4 @@ fi
 alias ls='eza --git --icons=auto --group-directories-first'
 alias grep='grep --color=auto'
 
-PS1="[\[\e[34m\]\u\[\e[0m\]@\h \W]\$ "
+PS1="\[\e[34m\]\u\[\e[0m\]@\h:\w\$ "
