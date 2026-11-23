@@ -58,11 +58,18 @@ spawn-at-startup "swaybg" "-i" "/home/kurumi/pic/wlp/324186.jpg" "-m" "fill"
 spawn-at-startup "waybar"
 spawn-at-startup "mako"
 
+cursor {
+    xcursor-theme "Adwaita"
+    xcursor-size 24
+}
+
 environment {
     EDITOR "nvim"
     VISUAL "nvim"
     QT_QPA_PLATFORMTHEME "qt6ct"
     QT_STYLE_OVERRIDE "Fusion"
+    XCURSOR_THEME "Adwaita"
+    XCURSOR_SIZE "24"
 }
 
 hotkey-overlay { skip-at-startup; }
