@@ -52,8 +52,8 @@ cursor {
 }
 
 environment {
-    EDITOR "nvim"
-    VISUAL "nvim"
+    EDITOR "vim"
+    VISUAL "vim"
     QT_QPA_PLATFORMTHEME "qt6ct"
     QT_STYLE_OVERRIDE "Fusion"
     XCURSOR_THEME "Adwaita"

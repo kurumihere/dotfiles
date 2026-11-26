@@ -32,8 +32,6 @@ meson
 mpv
 nautilus
 ncdu
-neovim
-neovim-symlinks
 niri
 noto-fonts
 noto-fonts-emoji

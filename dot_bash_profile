@@ -17,8 +17,8 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
 [ -d "$CARGO_HOME/bin" ] && export PATH="$CARGO_HOME/bin:$PATH"
 
-export EDITOR="nvim"
-export VISUAL="nvim"
+export EDITOR="vim"
+export VISUAL="vim"
 export QT_QPA_PLATFORMTHEME="qt6ct"
 export QT_STYLE_OVERRIDE="Fusion"
 
