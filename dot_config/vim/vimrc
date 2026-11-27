@@ -1,16 +1,18 @@
 let mapleader = "'"
 let maplocalleader = "\\"
-
 set number
 set relativenumber
 set cursorline
 set cursorlineopt=number
-set laststatus=2
 set signcolumn=yes
 set list
 set listchars=tab:\ \ ,trail:·
 set termguicolors
-
+set linebreak
+set breakindent
+set showbreak=↪\ 
+set scrolloff=10
+set sidescrolloff=10
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -18,19 +20,12 @@ set expandtab
 set shiftround
 set autoindent
 set smartindent
-
-set linebreak
-set breakindent
-set showbreak=↪\ 
-
 set ignorecase
 set smartcase
 set incsearch
 set hlsearch
-
 set splitright
 set splitbelow
-
 set undofile
 if !isdirectory($HOME . '/.local/state/vim/undo')
     call mkdir($HOME . '/.local/state/vim/undo', 'p')
@@ -39,35 +34,25 @@ set undodir=~/.local/state/vim/undo//
 set noswapfile
 set nobackup
 set nowritebackup
+set viminfofile=NONE
 set confirm
 set notimeout
-
-set scrolloff=10
-set sidescrolloff=10
-
 filetype plugin indent on
 syntax enable
-
 silent! colorscheme habamax
 highlight Normal guibg=NONE ctermbg=NONE
 highlight NonText guibg=NONE ctermbg=NONE
 highlight LineNr guibg=NONE ctermbg=NONE
 highlight SignColumn guibg=NONE ctermbg=NONE
-
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
 nnoremap <silent> <Esc> :nohlsearch<CR><Esc>
-
 tnoremap <Esc> <C-\><C-n>
-
 nnoremap <leader><space> <C-^>
-
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :confirm q<CR>
-
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 nnoremap <leader>p "+p
